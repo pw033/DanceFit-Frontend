@@ -22,7 +22,10 @@ const backToTop = document.getElementById("backToTop");
 
 
 // 2. CONFIGURATION
+
 // Replace these demo details with the client's real details.
+
+const API_URL = "https://dance-fit-backend-cqmz.vercel.app";
 
 const BUSINESS = {
     name: "DanceFit",
@@ -331,7 +334,7 @@ registrationForm.addEventListener("submit", async function (event) {
 
         // Create payment order on backend
         const orderResponse = await fetch(
-            "http://localhost:5000/api/create-order",
+           `${API_URL}/api/create-order`,
             {
                 method: "POST",
                 headers: {
@@ -379,7 +382,7 @@ registrationForm.addEventListener("submit", async function (event) {
 
                 try {
                     const verifyResponse = await fetch(
-                        "http://localhost:5000/api/verify-payment",
+                        `${API_URL}/api/verify-payment`,
                         {
                             method: "POST",
                             headers: {
